@@ -1,47 +1,75 @@
-# TypeScript Next.js example
+# VM-Movie React Next.js App with Docker Compose
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+## Description
 
-## Deploy your own
+VM-Movie is a dynamic web application built using React, Next.js, and Docker Compose. This application allows users to seamlessly explore a diverse collection of films. It leverages the TMDB API to fetch movie data, offering users up-to-date and comprehensive information about various movies. Furthermore, users have the ability to add their preferred movies to a personalized favorites list.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
+## Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+- Effortless Browsing and Search: Discover a wide array of movies and easily search for specific titles, all powered by the seamless integration with the TMDB API.
 
-## How to use it?
+- Detailed Movie Insights: Access in-depth details about each movie, including its title, release date, synopsis, and more.
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+- Personalized Favorites: Users can curate their own list of favorite movies by adding them to their favorites list. This list is stored locally, ensuring quick access.
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-```
+- Adaptive Design: The app boasts a responsive design, providing an optimal user experience across various devices.
 
-```bash
-yarn create next-app --example with-typescript with-typescript-app
-```
+## Installation
+
+1. Clone the repository:
 
 ```bash
-pnpm create next-app --example with-typescript with-typescript-app
+git clone https://github.com/1ragnar/vm-movie.git
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+2. Navigate to the project directory:
 
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
-
-```
-npm install --save-dev typescript
+```bash
+ cd vm-movie
 ```
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+3. Create a .env.local file in the root directory and add your NEXT_PUBLIC_API_HOST, NEXT_PUBLIC_TMDB_BASE_IMAGE_URL,NEXT_PUBLIC_TMDB_AUTH_TOKEN
 
+Example:
+NEXT_PUBLIC_API_HOST=https://api.themoviedb.org/3
+NEXT_PUBLIC_TMDB_BASE_IMAGE_URL=https://image.tmdb.org/t/p/original
+NEXT_PUBLIC_TMDB_AUTH_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MGFhNzE4MzdmNDYzNTQxY2Y3ZWIwNTE2NDVjNTNjZSIsInN1YiI6IjVjZTk5MmQ1MGUwYTI2MzgxY2Q2MzA5MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nWwgQTjkqiJd6kz5VOzrxNb1xy6CetWl0bN21r3S1e0
+
+### Please use your keys. This is here only for testing purpose.
+
+## Build Project with docker
+
+Navigate to the root project directory and run:
+
+```bash
+COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build
 ```
-npm install --save-dev @types/react @types/react-dom @types/node
+
+## Start the docker Project
+
+```bash
+docker-compose up
 ```
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+## Build the Project localy
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+```bash
+npm i
+```
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+## Start the Project localy
+
+```bash
+npm run dev
+```
+
+## Technologies Utilized
+
+- React.js
+- Next.js
+- TMDB API
+- Docker Compose
+
+## License
+
+This project is licensed under the MIT License.

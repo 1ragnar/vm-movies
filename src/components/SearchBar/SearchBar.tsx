@@ -5,7 +5,6 @@ import {
   faMagnifyingGlass,
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { useDispatch } from "react-redux";
 import {
   Input,
   LeftIcon,

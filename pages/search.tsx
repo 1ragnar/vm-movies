@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React, { useCallback, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { CustomList } from "../src/components/List/CustomList";
+import { Loader } from "../src/components/Loader/Loader";
 import { IMovie } from "../src/interfaces";
 import { searchMovie } from "../src/repositories/movies";
 import { PageRootContainer } from "../styles/pages";
@@ -57,17 +58,21 @@ const SearchPage = ({}: ISearchPageProps) => {
 
   return (
     <PageRootContainer>
-      <CustomList
-        items={withTitle.movies}
-        onLoadNextPage={() =>
-          fetchMovies({
-            page: withTitle.page + 1,
-            title: query.title as string,
-          })
-        }
-        title={`Movies with title ${query.title}`}
-        onFavoriteClick={(movie) => updateListFavorite(setWithTitle, movie)}
-      />
+      {withTitle.movies.length > 0 ? (
+        <CustomList
+          items={withTitle.movies}
+          onLoadNextPage={() =>
+            fetchMovies({
+              page: withTitle.page + 1,
+              title: query.title as string,
+            })
+          }
+          title={`Movies with title ${query.title}`}
+          onFavoriteClick={(movie) => updateListFavorite(setWithTitle, movie)}
+        />
+      ) : (
+        <Loader text={"Loading movies"} />
+      )}
     </PageRootContainer>
   );
 };
