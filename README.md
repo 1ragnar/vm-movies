@@ -19,7 +19,7 @@ VM-Movie is a dynamic web application built using React, Next.js, and Docker Com
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/1ragnar/vm-movie.git
+git clone git@github.com:1ragnar/vm-movies.git
 ```
 
 2. Navigate to the project directory:
