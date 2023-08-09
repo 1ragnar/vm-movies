@@ -18,6 +18,9 @@ const Layout: React.FC<Props> = ({ children }) => {
   const router = useRouter();
 
   const handleSearch = (text: string) => {
+    if (text === "" && router.pathname === "/search") {
+      router.push({ pathname: "/" });
+    }
     router.replace({
       pathname: "/search",
       query: { title: text },
