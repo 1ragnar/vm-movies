@@ -31,13 +31,18 @@ git clone git@github.com:1ragnar/vm-movies.git
 3. Create a .env.local file in the root directory and add your NEXT_PUBLIC_API_HOST, NEXT_PUBLIC_TMDB_BASE_IMAGE_URL,NEXT_PUBLIC_TMDB_AUTH_TOKEN
 
 Example:
+
+```bash
 NEXT_PUBLIC_API_HOST=https://api.themoviedb.org/3
 NEXT_PUBLIC_TMDB_BASE_IMAGE_URL=https://image.tmdb.org/t/p/original
 NEXT_PUBLIC_TMDB_AUTH_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MGFhNzE4MzdmNDYzNTQxY2Y3ZWIwNTE2NDVjNTNjZSIsInN1YiI6IjVjZTk5MmQ1MGUwYTI2MzgxY2Q2MzA5MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nWwgQTjkqiJd6kz5VOzrxNb1xy6CetWl0bN21r3S1e0
+```
 
 ### Please use your keys. This is here only for testing purpose.
 
-## Build Project with docker
+## Using docker
+
+### Build the docker Project
 
 Navigate to the root project directory and run:
 
@@ -45,19 +50,21 @@ Navigate to the root project directory and run:
 COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build
 ```
 
-## Start the docker Project
+### Start the docker Project
 
 ```bash
 docker-compose up
 ```
 
-## Build the Project localy
+## Localy
+
+### Install dependencies
 
 ```bash
 npm i
 ```
 
-## Start the Project localy
+### Start the Project localy
 
 ```bash
 npm run dev
