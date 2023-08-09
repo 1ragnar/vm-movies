@@ -28,18 +28,6 @@ git clone git@github.com:1ragnar/vm-movies.git
  cd vm-movie
 ```
 
-3. Create a .env.local file in the root directory and add your NEXT_PUBLIC_API_HOST, NEXT_PUBLIC_TMDB_BASE_IMAGE_URL,NEXT_PUBLIC_TMDB_AUTH_TOKEN
-
-Example:
-
-```bash
-NEXT_PUBLIC_API_HOST=https://api.themoviedb.org/3
-NEXT_PUBLIC_TMDB_BASE_IMAGE_URL=https://image.tmdb.org/t/p/original
-NEXT_PUBLIC_TMDB_AUTH_TOKEN=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MGFhNzE4MzdmNDYzNTQxY2Y3ZWIwNTE2NDVjNTNjZSIsInN1YiI6IjVjZTk5MmQ1MGUwYTI2MzgxY2Q2MzA5MyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nWwgQTjkqiJd6kz5VOzrxNb1xy6CetWl0bN21r3S1e0
-```
-
-### Please use your keys. This is here only for testing purpose.
-
 ## Using docker
 
 ### Build the docker Project
